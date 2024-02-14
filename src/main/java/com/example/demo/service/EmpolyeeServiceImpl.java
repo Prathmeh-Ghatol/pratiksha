@@ -9,6 +9,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 @Service
 public class EmpolyeeServiceImpl implements EmpolyeeService{
     @Autowired
@@ -42,5 +46,10 @@ public class EmpolyeeServiceImpl implements EmpolyeeService{
 
     }
 
+    public Set<Employee> allEmpolyee(){
+        List<Employee>all =this.empolyeeDao.findAll();
+        Set<Employee> allSet=all.stream().map(employee -> employee).collect(Collectors.toSet());
+        return allSet;
+    }
 
 }
