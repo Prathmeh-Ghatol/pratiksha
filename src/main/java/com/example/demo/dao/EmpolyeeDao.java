@@ -9,6 +9,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.UUID;
 
 public interface EmpolyeeDao extends JpaRepository<Employee, UUID> {
-    @Query(value = "SELECT * FROM Employee WHERE login_id = :id", nativeQuery = true)
+    @Query(value = "SELECT * FROM employee WHERE login_id = :id", nativeQuery = true)
     Employee findByLoginId(@Param("id") String loginId);
 }

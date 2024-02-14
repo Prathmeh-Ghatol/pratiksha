@@ -1,9 +1,6 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,11 +10,12 @@ import java.util.Date;
 import java.util.UUID;
 
 @Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Table(name="employee")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
